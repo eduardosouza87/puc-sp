@@ -26,6 +26,8 @@
 
 <body class="font-inter">
 
+	<?php get_template_part('components/loader'); ?>
+
 	<header class="bg-app-black py-4 relative">
 		<div class="flex items-center gap-x-4 px-5 h-full justify-between lg:justify-normal">
 			<a href="<?php echo get_site_url(); ?>">
