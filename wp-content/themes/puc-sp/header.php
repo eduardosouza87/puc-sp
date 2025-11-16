@@ -25,13 +25,12 @@
 </head>
 
 <body class="font-inter">
-
 	<?php get_template_part('components/loader'); ?>
 
 	<header class="bg-app-black py-4 relative">
 		<div class="flex items-center gap-x-4 px-5 h-full justify-between lg:justify-normal">
 			<a href="<?php echo get_site_url(); ?>">
-				<img class="object-contain max-w-40 mx-auto" src="<?php echo get_template_directory_uri() . '/assets/images/logo-login-house-exp-loginhouseexp-l04.webp'; ?>">
+				<img class="object-contain max-w-40 mx-auto" src="<?php echo get_template_directory_uri() . '/assets/images/logo-pucsp.jpg'; ?>">
 			</a>
 
 			<div class="g-menu max-lg:bg-app-black w-full	max-lg:bottom-0 max-lg:left-0 max-lg:top-0 max-lg:min-h-screen max-lg:opacity-0 max-lg:invisible max-lg:z-50 max-lg:fixed max-lg:transition-all max-lg:duration-500 max-lg:pt-24 max-lg:pb-16 max-lg:translate-x-full max-lg:pr-10">
@@ -52,7 +51,7 @@
 				</div>
 			</div>
 
-			<button class="menu__burger space-y-2 block lg:hidden z-[9999]" type="button" aria-label="Menu" aria-controls="navigation">
+			<button class="menu__burger space-y-2 block lg:hidden z-9999" type="button" aria-label="Menu" aria-controls="navigation">
 				<span class="block w-8 h-0.5 bg-slate-50"></span>
 				<span class="block w-8 h-0.5 bg-slate-50"></span>
 				<span class="block w-8 h-0.5 bg-slate-50"></span>

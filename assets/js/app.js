@@ -1,3 +1,4 @@
+import 'flowbite'
 import Loader from "./loader"
 import MenuEvents from "./menu-events"
 
