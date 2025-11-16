@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+
+@theme {
+	--font-inter: 'Inter', sans-serif;
+	
+	--color-app-blue: #03479C;
+	--color-app-secondary-blue: #00489C;
+	--color-app-yellow: #E3BF23;
+	--color-app-black: #050406;
+}
+
+body {
+	@apply text-sm font-inter;
+}
+
+/* Loading */
+.is-loaded .page-loader {
+	@apply invisible opacity-0;
+}
+
+/* Menu Mobile */
+.is-menu-open {
+  @apply overflow-hidden h-screen;
+}
+
+.is-menu-open .g-menu {
+  @apply max-lg:opacity-100 max-lg:visible max-lg:translate-x-0 max-lg:fixed;
+}
+
+.button {
+	@apply bg-app-blue text-center text-app-black rounded-3xl font-bold px-5 py-3 uppercase cursor-pointer transition-all;
+}
+
+.button--outline {
+	@apply text-app-blue font-normal border-2 border-app-blue bg-transparent;
+}
+
+.container {
+	@apply mx-auto;
+}
+
+.prose {
+	color: var(--color-neutral-100);
+	--tw-prose-headings: var(--color-app-blue);
+	--tw-prose-links: var(--color-app-blue);
+	--tw-prose-bold: var(--color-app-blue);
+	--tw-prose-quotes: var(--color-app-blue);
+	--tw-prose-code: var(--color-app-blue);
+}
+
+.grecaptcha-badge {
+	@apply !hidden !invisible;
+}
