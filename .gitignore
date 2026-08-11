@@ -31,6 +31,7 @@ wp-config.php
 
 # Uploads
 /wp-content/uploads/
+/wp-content/backups-dup-pro
 
 # Log files
 *.log
@@ -41,6 +42,7 @@ wp-config.php
 # Node dependencies
 node_modules
 package-lock.json
+
 
 # All plugins
 #
