@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@import "flowbite";
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
@@ -47,14 +46,104 @@ body {
 }
 
 .prose {
-	color: var(--color-neutral-100);
+	--tw-prose-body: var(--color-neutral-900);
 	--tw-prose-headings: var(--color-app-blue);
 	--tw-prose-links: var(--color-app-blue);
 	--tw-prose-bold: var(--color-app-blue);
 	--tw-prose-quotes: var(--color-app-blue);
 	--tw-prose-code: var(--color-app-blue);
+	@apply text-sm lg:text-base leading-normal;
 }
 
+.page-sobre .prose h2 {
+	@apply text-2xl lg:text-4xl;
+}
+
+.page-sobre .prose h3 {
+
+}
+
+.page-sobre .prose p {
+	@apply w-full lg:max-w-[900px];
+}
+
+.corner-top-left::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 40px 40px 0 0;
+	border-color: var(--color-app-yellow) transparent transparent transparent;
+	border-top-left-radius: 12px;
+}
 .grecaptcha-badge {
 	@apply !hidden !invisible;
+}
+
+.wp-block-gallery.has-nested-images {
+	@apply grid grid-cols-2 md:grid-cols-3 gap-4;
+}
+
+.wp-block-gallery.has-nested-images figure {
+	@apply !w-full;
+}
+
+	/* Hero Swiper Customization */
+	.hero-swiper .swiper-button-prev,
+	.hero-swiper .swiper-button-next {
+		background: var(--color-app-blue);
+		color: white;
+		border-radius: 50%;
+		padding: 12px;
+		transition: background 0.3s ease;
+		@apply w-9 h-9 lg:w-11 lg:h-11;
+	}
+
+	.hero-swiper .swiper-button-prev {
+		left: 16px !important;
+	}
+	
+	.hero-swiper .swiper-button-next {
+		right: 16px !important;
+	}
+
+	.hero-swiper .swiper-button-prev:hover,
+	.hero-swiper .swiper-button-next:hover {
+		background: rgba(0, 0, 0, 0.5);
+	}
+
+	.hero-swiper .swiper-button-prev::after,
+	.hero-swiper .swiper-button-next::after {
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	.hero-swiper .swiper-pagination-bullet {
+		width: 10px;
+		height: 10px;
+		background: white;
+		opacity: 0.5;
+		transition: opacity 0.3s ease;
+	}
+
+	.hero-swiper .swiper-pagination-bullet-active {
+		opacity: 1;
+	}
+
+	.hero-swiper .swiper-pagination {
+		padding-right: 16px;
+		text-align: right;
+	}
+
+	/* WP Forms */
+	.wpforms-container .wpforms-field {
+		padding: 6px 0 !important;
+		margin-bottom: 0 !important;
+	}
+
+	.wpforms-container input.wpforms-field-medium, .wpforms-container select.wpforms-field-medium, .wpforms-container .wpforms-field-row.wpforms-field-medium, .wp-core-ui div.wpforms-container input.wpforms-field-medium, .wp-core-ui div.wpforms-container select.wpforms-field-medium, .wp-core-ui div.wpforms-container .wpforms-field-row.wpforms-field-medium {
+    max-width: 100% !important;
 }

@@ -215,10 +215,13 @@ add_filter('intermediate_image_sizes_advanced', 'disable_image_sizes');
 
 function custom_login_logo()
 {
+	$upload_dir = wp_upload_dir();
+	$logo_url = $upload_dir['baseurl'] . '/2025/12/logo-pucsp-enciclopedia-juridica.png';
+
 	echo '
     <style type="text/css">
         #login h1 a {
-            background-image: url("https://loginexp.facilpass.com.br/wp-content/uploads/2025/03/logo-login-house-exp-loginhouseexp-l04.webp");
+            background-image: url("' . esc_url($logo_url) . '");
             background-size: contain;
             width: 100%;
             height: 120px;
@@ -239,3 +242,305 @@ function enqueue_custom_scripts()
 	);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
+/**
+ * Modifica o slug da taxonomy "autores" para usar /autores/ ao invés de /autor/
+ */
+function puc_sp_change_autores_rewrite($args, $taxonomy)
+{
+	if ($taxonomy === 'autores') {
+		$args['rewrite'] = [
+			'slug'         => 'autores',
+			'with_front'   => false,
+			'hierarchical' => false,
+		];
+	}
+	return $args;
+}
+add_filter('register_taxonomy_args', 'puc_sp_change_autores_rewrite', 10, 2);
+
+/**
+ * Adiciona estilos customizados para a paginação
+ */
+function puc_sp_custom_pagination_styles()
+{
+?>
+	<style>
+		/* Estilos da paginação - paginate_links */
+		.pagination {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5rem;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.pagination .page-numbers li {
+			display: inline-block;
+		}
+
+		.pagination .page-numbers li a,
+		.pagination .page-numbers li span {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 2.5rem;
+			height: 2.5rem;
+			padding: 0.5rem 0.75rem;
+			font-weight: 500;
+			font-size: 0.875rem;
+			color: #1e3a8a;
+			background-color: #fff;
+			border: 1px solid #e5e7eb;
+			border-radius: 0.5rem;
+			text-decoration: none;
+			transition: all 0.2s;
+		}
+
+		.pagination .page-numbers li a:hover {
+			background-color: #1e3a8a;
+			color: #fff;
+			border-color: #1e3a8a;
+		}
+
+		.pagination .page-numbers li span.current {
+			background-color: #1e3a8a;
+			color: #fff;
+			border-color: #1e3a8a;
+			font-weight: 600;
+		}
+
+		.pagination .page-numbers li span.dots {
+			border: none;
+			background: transparent;
+			color: #9ca3af;
+			pointer-events: none;
+		}
+
+		/* Estilos da paginação - the_posts_pagination */
+		.navigation.pagination {
+			margin-top: 3rem;
+		}
+
+		.navigation.pagination .nav-links {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5rem;
+			flex-wrap: wrap;
+		}
+
+		.navigation.pagination .nav-links a,
+		.navigation.pagination .nav-links .current,
+		.navigation.pagination .nav-links .dots {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 2.5rem;
+			height: 2.5rem;
+			padding: 0.5rem 0.75rem;
+			font-weight: 500;
+			font-size: 0.875rem;
+			color: #1e3a8a;
+			background-color: #fff;
+			border: 1px solid #e5e7eb;
+			border-radius: 0.5rem;
+			text-decoration: none;
+			transition: all 0.2s;
+		}
+
+		.navigation.pagination .nav-links a:hover {
+			background-color: #1e3a8a;
+			color: #fff;
+			border-color: #1e3a8a;
+		}
+
+		.navigation.pagination .nav-links .current {
+			background-color: #1e3a8a;
+			color: #fff;
+			border-color: #1e3a8a;
+			font-weight: 600;
+		}
+
+		.navigation.pagination .nav-links .dots {
+			border: none;
+			background: transparent;
+			color: #9ca3af;
+			pointer-events: none;
+		}
+
+		.navigation.pagination .nav-links .prev,
+		.navigation.pagination .nav-links .next {
+			font-weight: 600;
+		}
+
+		/* Responsive */
+		@media (max-width: 640px) {
+
+			.pagination .page-numbers li a,
+			.pagination .page-numbers li span,
+			.navigation.pagination .nav-links a,
+			.navigation.pagination .nav-links .current,
+			.navigation.pagination .nav-links .dots {
+				min-width: 2rem;
+				height: 2rem;
+				padding: 0.375rem 0.5rem;
+				font-size: 0.75rem;
+			}
+		}
+	</style>
+<?php
+}
+add_action('wp_head', 'puc_sp_custom_pagination_styles');
+
+/**
+ * Adiciona estilos customizados para o WPForms e scroll suave
+ */
+function puc_sp_custom_wpforms_styles()
+{
+?>
+	<style>
+		/* Scroll suave */
+		html {
+			scroll-behavior: smooth;
+		}
+
+		/* Estilos do WPForms - baseado nos inputs de busca do site */
+		.wpforms-container-custom .wpforms-form .wpforms-field-label {
+			font-weight: 600;
+			color: #1e3a8a;
+			margin-bottom: 0.5rem;
+			font-size: 0.875rem;
+		}
+
+		.wpforms-container-custom .wpforms-form input[type="text"],
+		.wpforms-container-custom .wpforms-form input[type="email"],
+		.wpforms-container-custom .wpforms-form input[type="tel"],
+		.wpforms-container-custom .wpforms-form input[type="url"],
+		.wpforms-container-custom .wpforms-form input[type="number"],
+		.wpforms-container-custom .wpforms-form textarea,
+		.wpforms-container-custom .wpforms-form select {
+			width: 100%;
+			padding: 0.75rem 1rem;
+			border: 1px solid #d1d5db;
+			border-radius: 0.5rem;
+			font-size: 0.875rem;
+			transition: all 0.2s;
+			background-color: #fff;
+		}
+
+		.wpforms-container-custom .wpforms-form input[type="text"]:focus,
+		.wpforms-container-custom .wpforms-form input[type="email"]:focus,
+		.wpforms-container-custom .wpforms-form input[type="tel"]:focus,
+		.wpforms-container-custom .wpforms-form input[type="url"]:focus,
+		.wpforms-container-custom .wpforms-form input[type="number"]:focus,
+		.wpforms-container-custom .wpforms-form textarea:focus,
+		.wpforms-container-custom .wpforms-form select:focus {
+			outline: none;
+			border-color: #1e3a8a;
+			ring: 2px;
+			ring-color: #1e3a8a;
+			box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.1);
+		}
+
+		.wpforms-container-custom .wpforms-form textarea {
+			min-height: 120px;
+			resize: vertical;
+		}
+
+		.wpforms-container-custom .wpforms-form .wpforms-field {
+			margin-bottom: 1.5rem;
+		}
+
+		.wpforms-container-custom .wpforms-form button[type="submit"],
+		.wpforms-container-custom .wpforms-form .wpforms-submit {
+			background-color: #1e3a8a;
+			color: #fff;
+			font-weight: 600;
+			padding: 0.75rem 2rem;
+			border: none;
+			border-radius: 0.5rem;
+			cursor: pointer;
+			transition: all 0.2s;
+			font-size: 0.875rem;
+		}
+
+		.wpforms-container-custom .wpforms-form button[type="submit"]:hover,
+		.wpforms-container-custom .wpforms-form .wpforms-submit:hover {
+			background-color: #1e40af;
+			transform: translateY(-1px);
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+		}
+
+		.wpforms-container-custom .wpforms-form .wpforms-required-label {
+			color: #ef4444;
+		}
+
+		.wpforms-container-custom .wpforms-form .wpforms-error {
+			color: #ef4444;
+			font-size: 0.75rem;
+			margin-top: 0.25rem;
+		}
+
+		.wpforms-container-custom .wpforms-form .wpforms-field.wpforms-has-error input,
+		.wpforms-container-custom .wpforms-form .wpforms-field.wpforms-has-error textarea,
+		.wpforms-container-custom .wpforms-form .wpforms-field.wpforms-has-error select {
+			border-color: #ef4444;
+		}
+
+		/* Remove estilos padrão do WPForms que podem conflitar */
+		.wpforms-container-custom .wpforms-form .wpforms-field-container {
+			max-width: 100%;
+		}
+
+		.wpforms-container-custom .wpforms-confirmation-container-full {
+			background-color: #dcfce7;
+			border: 1px solid #86efac;
+			color: #166534;
+			padding: 1rem;
+			border-radius: 0.5rem;
+			margin-bottom: 1rem;
+		}
+
+		.wp-block-image .alignleft,
+		.wp-block-image .alignright,
+		.wp-block-image .aligncenter {
+			float: none !important;
+			margin: 0 !important;
+		}
+
+		.wp-block-image {
+			margin: 0 !important;
+		}
+	</style>
+
+	<script>
+		// Scroll suave para âncoras (fallback para navegadores antigos)
+		document.addEventListener('DOMContentLoaded', function() {
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function(e) {
+					const href = this.getAttribute('href');
+					if (href === '#' || href === '') return;
+
+					const target = document.querySelector(href);
+					if (target) {
+						e.preventDefault();
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+
+						// Atualiza URL sem scroll
+						if (history.pushState) {
+							history.pushState(null, null, href);
+						}
+					}
+				});
+			});
+		});
+	</script>
+<?php
+}
+add_action('wp_head', 'puc_sp_custom_wpforms_styles');

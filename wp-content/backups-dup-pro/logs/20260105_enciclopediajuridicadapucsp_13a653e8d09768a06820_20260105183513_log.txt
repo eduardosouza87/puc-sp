@@ -1,0 +1,155 @@
+********************************************************************************
+********************************************************************************
+DUPLICATOR PRO PACKAGE-LOG: 2026-01-05 18:36:06
+NOTICE: Do NOT post to public sites or forums 
+PACKAGE CREATION START
+********************************************************************************
+********************************************************************************
+VERSION:	4.5.24.1
+WORDPRESS:	6.9
+PHP INFO:	8.2.27 | SAPI: cgi-fcgi
+SERVER:		nginx/1.26.1 
+ARCHITECTURE:	64-bit 
+CLIENT KICKOFF: off 
+PHP TIME LIMIT: [7200] not allowed 
+PHP MAX MEMORY: 256M (256M default) 
+RUN TYPE:	Manual
+MEMORY STACK:	12MB
+ARCHIVE ENGINE: ZipArchive: multi-thread
+PACKAGE COMPONENTS:
+	Database,
+	Core,
+	Plugins,
+	Themes,
+	Media,
+	Other
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   PHP + CHUNKING (query size limit - 131072 )
+
+TABLES: total: 43 | filtered:0 | create:43
+REWIND DATABASE ITERATOR
+INSERT ROWS TABLE[INDEX:0] wp_users NUM ROWS: 1
+REWIND DATABASE ITERATOR
+INSERT ROWS TABLE[INDEX:0] wp_users NUM ROWS: 1
+INSERT ROWS TABLE[INDEX:1] wp_usermeta NUM ROWS: 37
+INSERT ROWS TABLE[INDEX:2] wp_actionscheduler_actions NUM ROWS: 78
+INSERT ROWS TABLE[INDEX:3] wp_actionscheduler_claims NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:4] wp_actionscheduler_groups NUM ROWS: 3
+INSERT ROWS TABLE[INDEX:5] wp_actionscheduler_logs NUM ROWS: 222
+INSERT ROWS TABLE[INDEX:6] wp_cli_csv_template NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:7] wp_commentmeta NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:8] wp_comments NUM ROWS: 1
+INSERT ROWS TABLE[INDEX:9] wp_duplicator_activity_logs NUM ROWS: 6
+INSERT ROWS TABLE[INDEX:10] wp_duplicator_backups NUM ROWS: 2
+INSERT ROWS TABLE[INDEX:11] wp_duplicator_entities NUM ROWS: 8
+INSERT ROWS TABLE[INDEX:12] wp_failed_media NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:13] wp_import_detail_log NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:14] wp_import_log_detail NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:15] wp_import_postid NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:16] wp_links NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:17] wp_options NUM ROWS: 273
+INSERT ROWS TABLE[INDEX:18] wp_pmxi_files NUM ROWS: 5
+INSERT ROWS TABLE[INDEX:19] wp_pmxi_hash NUM ROWS: 1537
+INSERT ROWS TABLE[INDEX:20] wp_pmxi_history NUM ROWS: 12
+INSERT ROWS TABLE[INDEX:21] wp_pmxi_images NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:22] wp_pmxi_imports NUM ROWS: 5
+INSERT ROWS TABLE[INDEX:23] wp_pmxi_posts NUM ROWS: 1218
+INSERT ROWS TABLE[INDEX:24] wp_pmxi_templates NUM ROWS: 1
+INSERT ROWS TABLE[INDEX:25] wp_postmeta NUM ROWS: 9411
+INSERT ROWS TABLE[INDEX:26] wp_posts NUM ROWS: 683
+INSERT ROWS TABLE[INDEX:27] wp_smackcsv_file_events NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:28] wp_smackuci_events NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:29] wp_summary NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:30] wp_term_relationships NUM ROWS: 1165
+INSERT ROWS TABLE[INDEX:31] wp_term_taxonomy NUM ROWS: 441
+INSERT ROWS TABLE[INDEX:32] wp_termmeta NUM ROWS: 2160
+INSERT ROWS TABLE[INDEX:33] wp_terms NUM ROWS: 441
+INSERT ROWS TABLE[INDEX:34] wp_ultimate_csv_importer_acf_fields NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:35] wp_ultimate_csv_importer_mappingtemplate NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:36] wp_ultimate_csv_importer_media NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:37] wp_ultimate_csv_importer_shortcode_manager NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:38] wp_ultimate_post_entries NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:39] wp_wpforms_logs NUM ROWS: 3
+INSERT ROWS TABLE[INDEX:40] wp_wpforms_payment_meta NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:41] wp_wpforms_payments NUM ROWS: 0
+INSERT ROWS TABLE[INDEX:42] wp_wpforms_tasks_meta NUM ROWS: 4
+SQL FILE SIZE CHECK OK, SIZE: 43222443
+SQL CREATED: 20260105_enciclopediajuridicadapucsp_13a653e8d09768a06820_20260105183513_database.sql
+SQL FILE SIZE: 41.22MB
+SQL FILE TIME: 2026-01-05 18:36:29
+SQL RUNTIME: 23.237 sec.
+MEMORY STACK: 14MB
+
+********************************************************************************
+ARCHIVE Mode:ZipArchive Multi-Threaded
+********************************************************************************
+ARCHIVE DIR:  E:/Local Sites/puc-sp/app/public
+ARCHIVE FILE: 20260105_enciclopediajuridicadapucsp_13a653e8d09768a06820_20260105183513_archive.zip
+COMPRESSION: *ON*
+FILTERS: *ON*
+DIRS:  E:/Local Sites/puc-sp/app/public/assets
+	E:/Local Sites/puc-sp/app/public/node_modules
+	E:/Local Sites/puc-sp/app/public/wp-content/uploads/wpallimport
+EXTS:  not set
+FILES:  not set
+----------------------------------------
+COMPRESSING
+SIZE:	176.86MB
+STATS:	Dirs 1,848 | Files 12,224 | Total 14,072
+Archive progress - Size: 0B/176.86MB (0%)
+Archive progress - Size: 61.1MB/176.86MB (34.5%)
+Archive progress - Size: 61.1MB/176.86MB (34.5%)
+Archive progress - Size: 61.1MB/176.86MB (34.5%)
+Archive progress - Size: 61.1MB/176.86MB (34.5%)
+Archive progress - Size: 91.73MB/176.86MB (51.9%)
+Archive progress - Size: 91.73MB/176.86MB (51.9%)
+Archive progress - Size: 91.73MB/176.86MB (51.9%)
+Archive progress - Size: 91.73MB/176.86MB (51.9%)
+Archive progress - Size: 122.27MB/176.86MB (69.1%)
+Archive progress - Size: 122.27MB/176.86MB (69.1%)
+Archive progress - Size: 153.09MB/176.86MB (86.6%)
+COMPRESSED SIZE: 66.86MB
+ARCHIVE RUNTIME: 179.419 sec.
+MEMORY STACK: 14MB
+ARCHIVE CONSISTENCY TEST: PASS
+
+********************************************************************************
+STORAGE:
+********************************************************************************
+DEFAULT LOCAL: Default, E:/Local Sites/puc-sp/app/public/wp-content/backups-dup-pro
+
+********************************************************************************
+INTEGRITY CHECKS:
+********************************************************************************
+SQL FILE: 41.22MB
+INSTALLER FILE: 127.7KB
+ARCHIVE FILE: 81.28MB 
+EXPECTED FILE/DIRECTORY COUNT: 14,072
+ACTUAL FILE/DIRECTORY COUNT: 14,072
+
+********************************************************************************
+RECORD ID:[2]
+TOTAL PROCESS RUNTIME: 214.948 sec.
+PEAK PHP MEMORY USED: 12MB
+DONE PROCESSING => 20260105_enciclopediajuridicadapucsp 2026-01-05 18:39:41
+
+-----------------------------------------
+STORAGE PROCESSING THREAD INITIATED
+** DEFAULT LOCAL [Name: Default] [ID: 3] **
+SUCCESS: Backup is in default location: E:/Local Sites/puc-sp/app/public/wp-content/backups-dup-pro
+-----------------------------------------
+STORAGE PROCESSING THREAD INITIATED
+STORAGE PROCESSING COMPLETED
+Attempting to purge old Backups at Default[ID: 3] type: Default Local
+Purge of old Backups at Default[ID: 3] storage completed. Num packages deleted 0
+
+********************************************************************************
+********************************************************************************
+DUPLICATOR PRO PACKAGE CREATION OR MANUAL STORAGE TRANSFER END: 2026-01-05 18:39:50
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+********************************************************************************
+

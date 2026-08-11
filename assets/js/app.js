@@ -1,6 +1,7 @@
 import 'flowbite'
 import Loader from "./loader"
 import MenuEvents from "./menu-events"
+import SwiperInit from "./swiper-init"
 
 const body = document.body;
 const widthPage = window.innerWidth;
@@ -29,8 +30,9 @@ window.onload = () => {
 	 * Menu and Window events
 	 */
 	MenuEvents.setBurgerMenuWhenMobile();
-	MenuEvents.scrollPageEvent();
-	MenuEvents.smoothLinkEvent();	
+	MenuEvents.smoothLinkEvent();
+
+	SwiperInit.init("hero-slider", 1); // Hero Banner Home
 
 	// Loader Stop, open site
 	Loader.stopLoading();
